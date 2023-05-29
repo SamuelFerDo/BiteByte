@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.bitebyte.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.bitebyte.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_questionStartFragment"
+            app:destination="@id/questionStartFragment"
+            app:popUpTo="@id/main_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.bitebyte.ui.auth.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.bitebyte.ui.onBoard.onBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_onBoardingFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionOneFragment"
+        android:name="com.example.bitebyte.ui.question.questionone.QuestionOneFragment"
+        android:label="fragment_question_one"
+        tools:layout="@layout/fragment_question_one" >
+        <action
+            android:id="@+id/action_questionOneFragment_to_questionStartFragment"
+            app:destination="@id/questionStartFragment" />
+        <action
+            android:id="@+id/action_questionOneFragment_to_questionTwoFragment"
+            app:destination="@id/questionTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionStartFragment"
+        android:name="com.example.bitebyte.ui.question.QuestionStartFragment"
+        android:label="fragment_question_start"
+        tools:layout="@layout/fragment_question_start" >
+        <action
+            android:id="@+id/action_questionStartFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/main_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_questionStartFragment_to_questionOneFragment"
+            app:destination="@id/questionOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionTwoFragment"
+        android:name="com.example.bitebyte.ui.question.questiontwo.QuestionTwoFragment"
+        android:label="fragment_question_two"
+        tools:layout="@layout/fragment_question_two" >
+        <action
+            android:id="@+id/action_questionTwoFragment_to_questionOneFragment"
+            app:destination="@id/questionOneFragment" />
+        <action
+            android:id="@+id/action_questionTwoFragment_to_questionThreeFragment"
+            app:destination="@id/questionThreeFragment" />
+        <argument
+            android:name="age"
+            app:argType="string" />
+        <argument
+            android:name="weight"
+            app:argType="string" />
+        <argument
+            android:name="height"
+            app:argType="string" />
+        <argument
+            android:name="gender"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionThreeFragment"
+        android:name="com.example.bitebyte.ui.question.questionthree.QuestionThreeFragment"
+        android:label="fragment_question_three"
+        tools:layout="@layout/fragment_question_three" >
+        <action
+            android:id="@+id/action_questionThreeFragment_to_questionTwoFragment"
+            app:destination="@id/questionTwoFragment" />
+        <action
+            android:id="@+id/action_questionThreeFragment_to_generateFragment"
+            app:destination="@id/generateFragment" />
+        <argument
+            android:name="age"
+            app:argType="string" />
+        <argument
+            android:name="weight"
+            app:argType="string" />
+        <argument
+            android:name="height"
+            app:argType="string" />
+        <argument
+            android:name="gender"
+            app:argType="string" />
+        <argument
+            android:name="healthConcern"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/generateFragment"
+        android:name="com.example.bitebyte.ui.question.generate.GenerateFragment"
+        android:label="fragment_generate"
+        tools:layout="@layout/fragment_generate" >
+        <action
+            android:id="@+id/action_generateFragment_to_questionThreeFragment"
+            app:destination="@id/questionThreeFragment" />
+        <action
+            android:id="@+id/action_generateFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/main_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_generateFragment_to_questionThreeFragment2"
+            app:destination="@id/questionThreeFragment" />
+        <argument
+            android:name="age"
+            app:argType="string" />
+        <argument
+            android:name="weight"
+            app:argType="string" />
+        <argument
+            android:name="height"
+            app:argType="string" />
+        <argument
+            android:name="gender"
+            app:argType="string" />
+        <argument
+            android:name="healthConcern"
+            app:argType="string" />
+        <argument
+            android:name="menuType"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bitebyte.ui.bottomnav.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.bitebyte.ui.bottomnav.ui.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/recommendationFragment"
+        android:name="com.example.bitebyte.ui.bottomnav.ui.recommendation.RecommendationFragment"
+        android:label="fragment_recommendation"
+        tools:layout="@layout/fragment_recommendation" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.bitebyte.ui.bottomnav.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

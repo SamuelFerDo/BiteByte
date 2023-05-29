@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:background="@color/color_theme_secondary"
+        tools:context=".ui.question.questionone.QuestionOneFragment">
+
+        <ImageButton
+            android:id="@+id/ib_back_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_button_orange"
+            android:contentDescription="@string/nav_app_bar_navigate_up_description"
+            android:src="@drawable/baseline_arrow_back"
+            android:elevation="10dp"
+            android:paddingStart="6dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_illustration"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/question2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/question_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/ib_back_button"
+            android:layout_marginEnd="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ib_back_button"
+            app:layout_constraintBottom_toBottomOf="@id/ib_back_button"
+            android:src="@drawable/slide2" />
+
+        <TextView
+            android:id="@+id/tv_headline_health_concerns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_illustration"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textColor="@color/black"
+            android:text="@string/health_concerns"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge" />
+
+        <TextView
+            android:id="@+id/tv_health_concerns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_headline_health_concerns"
+            android:layout_marginStart="24dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginEnd="24dp"
+            android:text="@string/have_health_concerns"
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/sv_health_concerns"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:contentDescription="@string/health_concerns"
+            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_health_concerns">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="24dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_dont_have"
+                    android:layout_width="340dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/color_theme_et"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_dont_have"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dont_have"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:layout_marginTop="12dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_obesity"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/obesity"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_dont_have" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_obesity"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/color_theme_et"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_obesity">
+
+                    <ImageView
+                        android:id="@+id/iv_obesity"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/obesity"
+                        android:src="@drawable/obesity" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_cancer"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/cancer"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_obesity"
+                    app:layout_constraintTop_toBottomOf="@id/cv_dont_have" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_cancer"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/color_theme_et"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cv_obesity"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cancer">
+
+                    <ImageView
+                        android:id="@+id/iv_cancer"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/cancer"
+                        android:src="@drawable/cancer" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_cholesterol"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/cholesterol"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_obesity" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_cholesterol"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/color_theme_et"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cholesterol">
+
+                    <ImageView
+                        android:id="@+id/iv_cholesterol"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/cholesterol"
+                        android:src="@drawable/cholesterol" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_stroke"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/stroke"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_cholesterol" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_stroke"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/color_theme_et"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_stroke">
+
+                    <ImageView
+                        android:id="@+id/iv_stroke"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/stroke"
+                        android:src="@drawable/stroke" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_kidney"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/kidney"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_stroke" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_kidney"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/color_theme_et"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_kidney">
+
+                    <ImageView
+                        android:id="@+id/iv_kidney"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/kidney"
+                        android:src="@drawable/kidneys" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_diabetes"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/diabetes"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_cholesterol"
+                    app:layout_constraintTop_toBottomOf="@id/cv_cancer" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_diabetes"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/color_theme_et"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cv_cholesterol"
+                    app:layout_constraintTop_toBottomOf="@id/tv_diabetes">
+
+                    <ImageView
+                        android:id="@+id/iv_diabetes"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/diabetes"
+                        android:src="@drawable/diabetes" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_heart"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/heart"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_stroke"
+                    app:layout_constraintTop_toBottomOf="@id/cv_diabetes" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_heart"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/color_theme_et"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cv_stroke"
+                    app:layout_constraintTop_toBottomOf="@id/tv_heart">
+
+
+                <ImageView
+                        android:id="@+id/iv_heart"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/heart"
+                        android:src="@drawable/heart" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_liver"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/liver"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_kidney"
+                    app:layout_constraintTop_toBottomOf="@id/cv_heart" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_liver"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/color_theme_et"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cv_kidney"
+                    app:layout_constraintTop_toBottomOf="@id/tv_liver">
+
+                    <ImageView
+                        android:id="@+id/iv_liver"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/liver"
+                        android:src="@drawable/liver" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_next"
+            android:layout_marginStart="24dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/sv_health_concerns" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

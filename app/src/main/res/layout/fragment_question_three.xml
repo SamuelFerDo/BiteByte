@@ -3,10 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,7 +54,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:textColor="@color/black"
-            android:text="@string/menu_type"
+            android:text="@string/preference"
             android:textSize="40sp"
             android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge" />
@@ -193,7 +189,7 @@
             android:id="@+id/btn_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/action_generate"
+            android:text="@string/action_next"
             android:layout_marginStart="24dp"
             android:textSize="20sp"
             android:textStyle="bold"

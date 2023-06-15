@@ -42,7 +42,7 @@ class QuestionTwoFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        healthConcern = ""
+        healthConcern = "9"
         age = args.age
         weight = args.weight
         height = args.height
@@ -70,7 +70,7 @@ class QuestionTwoFragment : Fragment(), View.OnClickListener {
                     findNavController().navigate(QuestionTwoFragmentDirections.actionQuestionTwoFragmentToQuestionThreeFragment(age, weight, height, gender, healthConcern))
             }
             R.id.cv_dont_have->{
-                healthConcern = ""
+                healthConcern = "9"
                 binding.apply {
                     tvDontHave.setTextColor(ContextCompat.getColor(requireContext(),R.color.white))
                     ivObesity.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.obesity))
@@ -93,7 +93,7 @@ class QuestionTwoFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.cv_obesity ->{
-                healthConcern = "obesity"
+                healthConcern = "1"
                 binding.apply {
                     tvDontHave.setTextColor(ContextCompat.getColor(requireContext(),R.color.black))
                     cvDontHave.setCardBackgroundColor(ContextCompat.getColor(requireContext(),R.color.color_theme_et))
@@ -116,7 +116,7 @@ class QuestionTwoFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.cv_cancer ->{
-                healthConcern = "cancer"
+                healthConcern = "2"
                 binding.apply {
                     tvDontHave.setTextColor(ContextCompat.getColor(requireContext(),R.color.black))
                     cvDontHave.setCardBackgroundColor(ContextCompat.getColor(requireContext(),R.color.color_theme_et))
@@ -139,7 +139,7 @@ class QuestionTwoFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.cv_diabetes ->{
-                healthConcern = "diabetes"
+                healthConcern = "4"
                 binding.apply {
                     tvDontHave.setTextColor(ContextCompat.getColor(requireContext(),R.color.black))
                     cvDontHave.setCardBackgroundColor(ContextCompat.getColor(requireContext(),R.color.color_theme_et))
@@ -162,7 +162,7 @@ class QuestionTwoFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.cv_cholesterol ->{
-                healthConcern = "cholesterol"
+                healthConcern = "3"
                 binding.apply {
                     tvDontHave.setTextColor(ContextCompat.getColor(requireContext(),R.color.black))
                     cvDontHave.setCardBackgroundColor(ContextCompat.getColor(requireContext(),R.color.color_theme_et))
@@ -185,7 +185,7 @@ class QuestionTwoFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.cv_stroke ->{
-                healthConcern = "stroke"
+                healthConcern = "5"
                 binding.apply {
                     tvDontHave.setTextColor(ContextCompat.getColor(requireContext(),R.color.black))
                     cvDontHave.setCardBackgroundColor(ContextCompat.getColor(requireContext(),R.color.color_theme_et))
@@ -208,7 +208,7 @@ class QuestionTwoFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.cv_liver ->{
-                healthConcern = "liver"
+                healthConcern = "8"
                 binding.apply {
                     tvDontHave.setTextColor(ContextCompat.getColor(requireContext(),R.color.black))
                     cvDontHave.setCardBackgroundColor(ContextCompat.getColor(requireContext(),R.color.color_theme_et))
@@ -231,7 +231,7 @@ class QuestionTwoFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.cv_heart ->{
-                healthConcern = "heart"
+                healthConcern = "6"
                 binding.apply {
                     tvDontHave.setTextColor(ContextCompat.getColor(requireContext(),R.color.black))
                     cvDontHave.setCardBackgroundColor(ContextCompat.getColor(requireContext(),R.color.color_theme_et))
@@ -254,7 +254,7 @@ class QuestionTwoFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.cv_kidney ->{
-                healthConcern = "kidney"
+                healthConcern = "7"
                 binding.apply {
                     tvDontHave.setTextColor(ContextCompat.getColor(requireContext(),R.color.black))
                     cvDontHave.setCardBackgroundColor(ContextCompat.getColor(requireContext(),R.color.color_theme_et))

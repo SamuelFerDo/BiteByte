@@ -2,10 +2,12 @@ package com.example.bitebyte.ui.auth
 
 import android.os.Bundle
 import android.transition.TransitionInflater
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.bitebyte.R
@@ -46,8 +48,13 @@ class LoginFragment : Fragment(), View.OnClickListener {
             binding.progressBar.visibility = View.GONE
             when(it){
                 is ApiResult.Success -> {
-                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToQuestionStartFragment())
-                    Snackbar.make(binding.root, "Login Successful", Snackbar.LENGTH_SHORT).show()
+                    if(sessionManager.getFillInput() == null){
+                        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToQuestionStartFragment())
+                        Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
+                    }else{
+                        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
+                        Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
+                    }
                 }
                 is ApiResult.Error -> {
                     Snackbar.make(binding.root, it.error, Snackbar.LENGTH_SHORT).show()

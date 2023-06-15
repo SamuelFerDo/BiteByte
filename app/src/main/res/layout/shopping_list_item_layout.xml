@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="recipe"
+            type="com.example.bitebyte.data.model.Recipe" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/favorite_card_view"
+        android:layout_gravity="center"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/color_theme_et"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="6dp"
+        app:cardCornerRadius="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/recipe_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp" >
+
+            <TextView
+                android:id="@+id/tv_ingredients_name"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Olive Oil" />
+
+            <ImageView
+                android:id="@+id/iv_star"
+                android:layout_width="20dp"
+                android:visibility="gone"
+                android:layout_height="20dp"
+                android:src="@drawable/baseline_delete_24"
+                app:layout_constraintStart_toStartOf="@id/tv_ingredients_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_ingredients_name"/>
+
+            <TextView
+                android:id="@+id/tv_recipe_name"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                tools:text="Seafood Stir-fried Noodles"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="@color/color_theme_primary"
+                app:layout_constraintStart_toStartOf="@id/tv_ingredients_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_ingredients_name" />
+
+            <CheckBox
+                android:id="@+id/circular_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:checked="false"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toTopOf="@id/tv_ingredients_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_recipe_name"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

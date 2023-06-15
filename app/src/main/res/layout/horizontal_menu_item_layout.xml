@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="recipe"
+            type="com.example.bitebyte.data.model.Recipe" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/favorite_card_view"
+        android:layout_gravity="center"
+        app:cardElevation="4dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        app:cardBackgroundColor="@color/color_theme_secondary"
+        app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp" >
+
+        <ImageView
+            android:id="@+id/iv_recipe"
+            android:layout_width="112dp"
+            android:layout_height="112dp"
+            android:background="@drawable/card_with_shadow"
+            android:clipToOutline="true"
+            android:elevation="4dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/tv_recipe_name"
+            android:layout_width="112dp"
+            android:layout_height="32dp"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/iv_recipe"
+            app:layout_constraintStart_toStartOf="@id/iv_recipe"
+            app:layout_constraintTop_toBottomOf="@id/iv_recipe"
+            tools:text="Seafood Stir-fried Noodle"
+            android:text="@{recipe.name}"/>
+
+        <ImageView
+            android:id="@+id/iv_star"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="@id/tv_recipe_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_recipe_name"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/icon_burn"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            tools:text="10 Calories"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@color/color_theme_primary"
+            app:layout_constraintStart_toEndOf="@id/iv_star"
+            app:layout_constraintTop_toTopOf="@id/iv_star"
+            app:layout_constraintBottom_toBottomOf="@id/iv_star"
+            android:text="@{recipe.calories + ` Calories`}" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

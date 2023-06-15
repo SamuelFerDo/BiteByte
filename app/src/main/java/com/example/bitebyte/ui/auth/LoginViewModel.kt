@@ -40,8 +40,27 @@ class LoginViewModel (application: Application, private val seesionManager: Sess
                         Log.d(TAG, "Success: ${responseBody!!}")
                         seesionManager.addUserSession(
                             responseBody.username,
-                            response.body()!!.token
+                            response.body()!!.token,
+                            response.body()!!.email,
+                            response.body()!!.userId.toString(),
                         )
+                        if(responseBody.age > 0) {
+                            seesionManager.addFillInput("true")
+                        }
+                        seesionManager.addUserInput(
+                            responseBody.age.toString(),
+                            responseBody.gender.toString(),
+                            responseBody.height.toString(),
+                            responseBody.weight.toString(),
+                            responseBody.health_concern.toString(),
+                            responseBody.menu_type.toString(),
+                            responseBody.activity_type.toString()
+                        )
+                        if(responseBody!!.images == null) {
+                            seesionManager.changePhoto("")
+                        } else{
+                            seesionManager.changePhoto(responseBody.images)
+                        }
                         _login.postValue(ApiResult.Success)
                     } else {
                         Log.e(TAG, "Error: ${response.message()}")

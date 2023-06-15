@@ -74,5 +74,6 @@
     <color name="color_theme_secondary">#FFFFF9F6</color>
     <color name="color_theme_et">#FFEEE9E6</color>
     <color name="color_theme_secondary_light">#59FFF9F6</color>
+    <color name="color_description_text">#9E9E9E</color>
 
 </resources>

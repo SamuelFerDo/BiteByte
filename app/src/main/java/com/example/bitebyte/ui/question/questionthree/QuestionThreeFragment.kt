@@ -62,13 +62,13 @@ class QuestionThreeFragment : Fragment(), View.OnClickListener {
             }
             R.id.btn_next ->{
                 if(emptyField(menuType)) {
-                    findNavController().navigate(QuestionThreeFragmentDirections.actionQuestionThreeFragmentToGenerateFragment(age, weight, height, gender, healthConcern, menuType))
+                    findNavController().navigate(QuestionThreeFragmentDirections.actionQuestionThreeFragmentToQuestionFourFragment(age, weight, height, gender, healthConcern, menuType))
                 }else{
                     Snackbar.make(binding.root, getString(R.string.fill_all_fields), Snackbar.LENGTH_SHORT).show()
                 }
             }
             R.id.cv_standart->{
-                menuType = "standard"
+                menuType = "1"
                 binding.apply {
                     tvStandar.setTextColor(resources.getColor(R.color.white))
                     tvStandarDesc.setTextColor(resources.getColor(R.color.white))
@@ -79,7 +79,7 @@ class QuestionThreeFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.cv_vegetarian->{
-                menuType = "vegetarian"
+                menuType = "2"
                 binding.apply {
                     tvStandar.setTextColor(resources.getColor(R.color.black))
                     tvStandarDesc.setTextColor(resources.getColor(R.color.black))

@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_theme_secondary"
+    tools:context=".ui.premium.PremiumFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_get_premium"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:elevation="20dp"
+        android:transitionName="formContainer"
+        android:background="@drawable/rounded_bottom"
+        android:paddingTop="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ib_back_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_button"
+            android:contentDescription="@string/nav_app_bar_navigate_up_description"
+            android:src="@drawable/baseline_arrow_back"
+            android:elevation="10dp"
+            android:paddingStart="6dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_premium_star_1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_star_yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_get_premium"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_premium_star_2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_star_yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_get_premium"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_get_premium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:elevation="6dp"
+            android:text="@string/get_premium"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_headline_premium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/container_get_premium"
+        android:layout_marginStart="24dp"
+        android:textAlignment="center"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/color_theme_primary"
+        android:text="@string/headline_premium"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/tv_headline_premium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_personalized_diet"
+            android:layout_width="71dp"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/personalized_diet"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_personalized"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/personalized_diet_plan"
+                    android:textColor="@color/color_theme_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="13dp"
+                    app:layout_constraintStart_toEndOf="@id/iv_personalized_diet"
+                    app:layout_constraintTop_toTopOf="@id/iv_personalized_diet"/>
+
+                <TextView
+                    android:id="@+id/tv_personalized_desc"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/personalized_desc"
+                    android:maxLines="2"
+                    android:textColor="@color/color_theme_primary"
+                    android:layout_marginTop="2dp"
+                    android:textSize="11sp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_personalized"
+                    app:layout_constraintStart_toStartOf="@id/tv_personalized"/>
+
+        <ImageView
+            android:id="@+id/iv_diet_choice"
+            android:layout_width="76dp"
+            android:layout_height="73dp"
+            android:src="@drawable/diet_choices"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_personalized_diet" />
+
+        <TextView
+            android:id="@+id/tv_diet_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diet_choices"
+            android:textColor="@color/color_theme_primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/iv_diet_choice"
+            app:layout_constraintTop_toTopOf="@id/iv_diet_choice"/>
+
+        <TextView
+            android:id="@+id/tv_diet_choice_desc"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:text="@string/diet_choices_desc"
+            android:maxLines="2"
+            android:textColor="@color/color_theme_primary"
+            android:layout_marginTop="2dp"
+            android:textSize="11sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_diet_choice"
+            app:layout_constraintStart_toStartOf="@id/tv_diet_choice"/>
+
+        <ImageView
+            android:id="@+id/iv_reminder"
+            android:layout_width="63dp"
+            android:layout_height="69dp"
+            android:src="@drawable/reminder"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_diet_choice" />
+
+        <TextView
+            android:id="@+id/tv_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reminder"
+            android:textColor="@color/color_theme_primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="21dp"
+            app:layout_constraintStart_toEndOf="@id/iv_reminder"
+            app:layout_constraintTop_toTopOf="@id/iv_reminder"/>
+
+        <TextView
+            android:id="@+id/tv_reminder_desc"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:text="@string/reminder_desc"
+            android:maxLines="2"
+            android:textColor="@color/color_theme_primary"
+            android:layout_marginTop="2dp"
+            android:textSize="11sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_reminder"
+            app:layout_constraintStart_toStartOf="@id/tv_reminder"/>
+
+        <ImageView
+            android:id="@+id/iv_exclusive_menu"
+            android:layout_width="71dp"
+            android:layout_height="63dp"
+            android:src="@drawable/exclusive_menu"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_reminder" />
+
+        <TextView
+            android:id="@+id/tv_exclusive_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exclusive_menu"
+            android:textColor="@color/color_theme_primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toEndOf="@id/iv_exclusive_menu"
+            app:layout_constraintTop_toTopOf="@id/iv_exclusive_menu"/>
+
+        <TextView
+            android:id="@+id/tv_exclusive_menu_desc"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:text="@string/exclusive_menu_desc"
+            android:maxLines="2"
+            android:textColor="@color/color_theme_primary"
+            android:layout_marginTop="2dp"
+            android:textSize="11sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_exclusive_menu"
+            app:layout_constraintStart_toStartOf="@id/tv_exclusive_menu"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_monthly"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="14dp"
+            android:background="@drawable/card_with_shadow"
+            app:cardBackgroundColor="@color/color_theme_primary"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_exclusive_menu">
+
+            <TextView
+                android:id="@+id/tv_monthly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="24dp"
+                android:textAlignment="center"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:text="@string/monthly"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_monthly_price"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:elevation="4dp"
+                android:layout_marginTop="60dp"
+                android:padding="16dp"
+                app:cardBackgroundColor="@color/color_theme_secondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_monthly_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/monthly_price"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_marginTop="15dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_per_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/per_month"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tv_monthly_price"
+                        app:layout_constraintEnd_toEndOf="@id/tv_monthly_price"
+                        app:layout_constraintTop_toBottomOf="@id/tv_monthly_price" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_yearly"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/card_with_shadow"
+            app:cardBackgroundColor="@color/color_theme_primary"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_exclusive_menu"
+            app:layout_constraintStart_toEndOf="@id/cv_monthly">
+
+            <TextView
+                android:id="@+id/tv_yearly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="24dp"
+                android:textAlignment="center"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:text="@string/yearly"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_edit_account"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:elevation="4dp"
+                android:layout_marginTop="60dp"
+                android:padding="16dp"
+                app:cardBackgroundColor="@color/color_theme_secondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="77dp">
+
+                    <TextView
+                        android:id="@+id/tv_yearly_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/yearly_price"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_per_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/per_year"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@id/tv_yearly_price"
+                        app:layout_constraintStart_toStartOf="@id/tv_yearly_price"
+                        app:layout_constraintTop_toBottomOf="@id/tv_yearly_price" />
+
+                    <TextView
+                        android:id="@+id/tv_discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/discount_yearly_price"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+                        android:textColor="@color/black"
+                        android:textSize="8sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/tv_yearly_price"
+                        app:layout_constraintEnd_toEndOf="@id/tv_yearly_price"
+                        app:layout_constraintStart_toStartOf="@id/tv_yearly_price" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

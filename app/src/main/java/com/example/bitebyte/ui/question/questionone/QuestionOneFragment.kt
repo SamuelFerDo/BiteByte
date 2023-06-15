@@ -61,7 +61,7 @@ class QuestionOneFragment : Fragment(), View.OnClickListener {
                 findNavController().navigate(QuestionOneFragmentDirections.actionQuestionOneFragmentToQuestionStartFragment())
             }
             R.id.cv_male ->{
-                gender = "male"
+                gender = "1"
                 binding.apply {
                     genderMale.setImageDrawable(resources.getDrawable(R.drawable.male_white))
                     genderFemale.setImageDrawable(resources.getDrawable(R.drawable.female))
@@ -72,7 +72,7 @@ class QuestionOneFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.cv_female ->{
-                gender = "female"
+                gender = "2"
                 binding.apply {
                     genderMale.setImageDrawable(resources.getDrawable(R.drawable.male))
                     genderFemale.setImageDrawable(resources.getDrawable(R.drawable.female_white))

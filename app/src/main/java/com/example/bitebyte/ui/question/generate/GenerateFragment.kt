@@ -16,7 +16,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.bitebyte.data.model.ApiResult
 import com.example.bitebyte.databinding.FragmentGenerateBinding
-import com.example.bitebyte.ui.question.questionone.QuestionOneViewModel
 import com.example.bitebyte.utils.SessionManager
 import com.example.bitebyte.utils.viewModelsFactory
 import com.google.android.material.snackbar.Snackbar
@@ -31,6 +30,7 @@ class GenerateFragment : Fragment() {
     private lateinit var height: String
     private lateinit var healthConcern: String
     private lateinit var menuType: String
+    private lateinit var activity: String
 
     private lateinit var sessionManager: SessionManager
 
@@ -41,7 +41,7 @@ class GenerateFragment : Fragment() {
 
     private val viewModel: GenerateViewModel by viewModelsFactory {
         sessionManager = SessionManager(requireContext())
-        GenerateViewModel(requireActivity().application, sessionManager ,age, weight,height,gender, healthConcern, menuType)
+        GenerateViewModel(requireActivity().application, sessionManager ,age, weight,height,gender, healthConcern, menuType, activity)
     }
 
     override fun onCreateView(
@@ -63,6 +63,7 @@ class GenerateFragment : Fragment() {
         gender = args.gender
         healthConcern  = args.healthConcern
         menuType = args.menuType
+        activity = args.activity
 
         viewModel.userData.observe(viewLifecycleOwner){
             when(it){
@@ -73,7 +74,6 @@ class GenerateFragment : Fragment() {
                     Snackbar.make(binding.root, it.error, Snackbar.LENGTH_SHORT).show()
                 }
                 is ApiResult.Loading -> {
-
                 }
             }
         }

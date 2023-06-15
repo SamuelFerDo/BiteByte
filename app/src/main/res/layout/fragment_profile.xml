@@ -1,59 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/color_theme_primary"
-    tools:context=".ui.bottomnav.ui.profile.ProfileFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/iv_logo"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
-        android:src="@drawable/logo_diet"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_theme_primary"
+        tools:context=".ui.bottomnav.ui.profile.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="4dp"
-        android:transitionName="profileContainer"
         android:background="@drawable/rounded_top"
+        android:elevation="4dp"
         android:padding="16dp"
-
+        android:transitionName="profileContainer"
         app:layout_constraintBottom_toBottomOf="parent">
 
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textSize="32sp"
-        tools:text="Gladys"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"/>
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/btn_premium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Gladys" />
+
+        <Button
+            android:id="@+id/btn_premium"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:text="@string/action_get_premium"
+            android:layout_marginStart="24dp"
+            android:textSize="20sp"
+            android:textAlignment="textEnd"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <ImageView
+            android:id="@+id/iv_premium_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/star"
+            app:layout_constraintBottom_toBottomOf="@id/btn_premium"
+            app:layout_constraintStart_toStartOf="@id/btn_premium"
+            app:layout_constraintTop_toTopOf="@id/btn_premium" />
 
         <TextView
             android:id="@+id/tv_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd= "24dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/tv_name"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="24dp"
             android:text="@string/profile"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"/>
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_premium" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_profile"
@@ -64,8 +84,8 @@
             app:cardBackgroundColor="@color/color_theme_secondary"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_profile">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -79,9 +99,9 @@
                     android:elevation="4dp"
                     android:padding="16dp"
                     app:cardBackgroundColor="@color/color_theme_secondary"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -91,35 +111,35 @@
                             android:id="@+id/iv_edit_account"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="parent"
                             android:layout_marginStart="20dp"
+                            android:src="@drawable/edit_account"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/tv_edit_account"
-                            android:src="@drawable/edit_account"/>
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/tv_edit_account"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:text="@string/edit_account"
+                            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
                             android:textColor="@color/black"
                             android:textSize="16sp"
-                            app:layout_constraintStart_toEndOf="@id/iv_edit_account"
-                            android:layout_marginStart="12dp"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"/>
+                            app:layout_constraintStart_toEndOf="@id/iv_edit_account"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
                             android:id="@+id/iv_edit_account_arrow"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="parent"
                             android:layout_marginEnd="16dp"
+                            android:src="@drawable/arrow_right"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            android:src="@drawable/arrow_right"/>
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
@@ -135,13 +155,13 @@
                     android:id="@+id/cv_edit_personal_data"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
+                    android:layout_marginTop="1dp"
                     android:elevation="4dp"
                     android:padding="16dp"
-                    android:layout_marginTop="1dp"
                     app:cardBackgroundColor="@color/color_theme_secondary"
-                    app:layout_constraintTop_toBottomOf="@id/cv_edit_account"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintTop_toBottomOf="@id/cv_edit_account">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -151,35 +171,35 @@
                             android:id="@+id/iv_edit_personal_data"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="parent"
                             android:layout_marginStart="20dp"
+                            android:src="@drawable/edit_personal_data"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/tv_edit_personal_data"
-                            android:src="@drawable/edit_personal_data"/>
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/tv_edit_personal_data"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:text="@string/edit_personal_data"
+                            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
                             android:textColor="@color/black"
                             android:textSize="16sp"
-                            app:layout_constraintStart_toEndOf="@id/iv_edit_personal_data"
-                            android:layout_marginStart="12dp"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"/>
+                            app:layout_constraintStart_toEndOf="@id/iv_edit_personal_data"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
                             android:id="@+id/iv_edit_personal_data_arrow"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="parent"
                             android:layout_marginEnd="16dp"
+                            android:src="@drawable/arrow_right"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            android:src="@drawable/arrow_right"/>
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
@@ -195,13 +215,13 @@
                     android:id="@+id/cv_diet_history"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
-                    android:elevation="4dp"
                     android:layout_marginTop="1dp"
+                    android:elevation="4dp"
                     android:padding="16dp"
                     app:cardBackgroundColor="@color/color_theme_secondary"
-                    app:layout_constraintTop_toBottomOf="@id/cv_edit_personal_data"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintTop_toBottomOf="@id/cv_edit_personal_data">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -211,45 +231,45 @@
                             android:id="@+id/iv_diet_history"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="parent"
                             android:layout_marginStart="20dp"
+                            android:src="@drawable/diet_history"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/tv_diet_history"
-                            android:src="@drawable/diet_history"/>
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/tv_diet_history"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:text="@string/diet_history"
+                            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
                             android:textColor="@color/black"
                             android:textSize="16sp"
-                            app:layout_constraintStart_toEndOf="@id/iv_diet_history"
-                            android:layout_marginStart="12dp"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"/>
+                            app:layout_constraintStart_toEndOf="@id/iv_diet_history"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
                             android:id="@+id/iv_diet_history_arrow"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="parent"
                             android:layout_marginEnd="16dp"
+                            android:src="@drawable/arrow_right"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            android:src="@drawable/arrow_right"/>
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
                             android:id="@+id/iv_diet_history_star"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="parent"
                             android:layout_marginEnd="16dp"
+                            android:src="@drawable/star"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/iv_diet_history_arrow"
-                            android:src="@drawable/star"/>
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
@@ -262,26 +282,26 @@
             android:id="@+id/tv_shopping_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd= "24dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/cv_profile"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="24dp"
             android:text="@string/my_shopping_list"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"/>
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_profile" />
 
         <ImageView
             android:id="@+id/iv_shopping_list_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/tv_shopping_list"
             android:layout_marginEnd="36dp"
+            android:src="@drawable/arrow_right"
             app:layout_constraintBottom_toBottomOf="@id/tv_shopping_list"
             app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/arrow_right"/>
+            app:layout_constraintTop_toTopOf="@id/tv_shopping_list" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_shopping_list"
@@ -292,142 +312,142 @@
             app:cardBackgroundColor="@color/color_theme_secondary"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_shopping_list">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingStart="24dp"
-            android:paddingBottom="24dp"
-            android:paddingEnd="24dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="24dp">
 
-            <ImageView
-                android:id="@+id/iv_total_item"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/round_button_orange"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                <ImageView
+                    android:id="@+id/iv_total_item"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/round_button_orange"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_total_item_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/zero"
-                android:textColor="@color/white"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/iv_total_item"
-                app:layout_constraintEnd_toEndOf="@id/iv_total_item"
-                app:layout_constraintStart_toStartOf="@id/iv_total_item"
-                app:layout_constraintTop_toTopOf="@id/iv_total_item" />
-            
-            <TextView
-                android:id="@+id/tv_total_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/total_item"
-                android:textSize="15sp"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="@id/iv_total_item"
-                app:layout_constraintStart_toStartOf="@id/iv_total_item"
-                app:layout_constraintTop_toBottomOf="@id/iv_total_item"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                <TextView
+                    android:id="@+id/tv_total_item_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_total_item"
+                    app:layout_constraintEnd_toEndOf="@id/iv_total_item"
+                    app:layout_constraintStart_toStartOf="@id/iv_total_item"
+                    app:layout_constraintTop_toTopOf="@id/iv_total_item" />
 
-            <ImageView
-                android:id="@+id/iv_purchased"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:background="@drawable/round_button_orange"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                <TextView
+                    android:id="@+id/tv_total_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/total_item"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/iv_total_item"
+                    app:layout_constraintStart_toStartOf="@id/iv_total_item"
+                    app:layout_constraintTop_toBottomOf="@id/iv_total_item" />
 
-            <TextView
-                android:id="@+id/tv_purchased_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/zero"
-                android:textColor="@color/white"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/iv_purchased"
-                app:layout_constraintEnd_toEndOf="@id/iv_purchased"
-                app:layout_constraintStart_toStartOf="@id/iv_purchased"
-                app:layout_constraintTop_toTopOf="@id/iv_purchased" />
+                <ImageView
+                    android:id="@+id/iv_purchased"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/round_button_orange"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_purchased"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/purchased"
-                android:textSize="15sp"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="@id/iv_purchased"
-                app:layout_constraintStart_toStartOf="@id/iv_purchased"
-                app:layout_constraintTop_toBottomOf="@id/iv_purchased"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                <TextView
+                    android:id="@+id/tv_purchased_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_purchased"
+                    app:layout_constraintEnd_toEndOf="@id/iv_purchased"
+                    app:layout_constraintStart_toStartOf="@id/iv_purchased"
+                    app:layout_constraintTop_toTopOf="@id/iv_purchased" />
 
-            <ImageView
-                android:id="@+id/iv_unpurchased"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/round_button_orange"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                <TextView
+                    android:id="@+id/tv_purchased"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/purchased"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/iv_purchased"
+                    app:layout_constraintStart_toStartOf="@id/iv_purchased"
+                    app:layout_constraintTop_toBottomOf="@id/iv_purchased" />
 
-            <TextView
-                android:id="@+id/tv_unpurchased_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/zero"
-                android:textColor="@color/white"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/iv_unpurchased"
-                app:layout_constraintEnd_toEndOf="@id/iv_unpurchased"
-                app:layout_constraintStart_toStartOf="@id/iv_unpurchased"
-                app:layout_constraintTop_toTopOf="@id/iv_unpurchased" />
+                <ImageView
+                    android:id="@+id/iv_unpurchased"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round_button_orange"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_unpurchased"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/unpurchased"
-                android:textSize="15sp"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="@id/iv_unpurchased"
-                app:layout_constraintStart_toStartOf="@id/iv_unpurchased"
-                app:layout_constraintTop_toBottomOf="@id/iv_unpurchased"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                <TextView
+                    android:id="@+id/tv_unpurchased_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_unpurchased"
+                    app:layout_constraintEnd_toEndOf="@id/iv_unpurchased"
+                    app:layout_constraintStart_toStartOf="@id/iv_unpurchased"
+                    app:layout_constraintTop_toTopOf="@id/iv_unpurchased" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tv_unpurchased"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/unpurchased"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/iv_unpurchased"
+                    app:layout_constraintStart_toStartOf="@id/iv_unpurchased"
+                    app:layout_constraintTop_toBottomOf="@id/iv_unpurchased" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/tv_others"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd= "24dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/cv_shopping_list"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="24dp"
             android:text="@string/others"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"/>
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_shopping_list" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_others"
@@ -438,13 +458,11 @@
             app:cardBackgroundColor="@color/color_theme_secondary"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="82dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_others">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_logout"
@@ -453,9 +471,9 @@
                 android:elevation="4dp"
                 android:padding="16dp"
                 app:cardBackgroundColor="@color/color_theme_secondary"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintEnd_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -465,46 +483,38 @@
                         android:id="@+id/iv_logout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginStart="20dp"
+                        android:src="@drawable/edit_account"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/tv_logout"
-                        android:src="@drawable/edit_account"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_logout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/edit_account"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/logout"
+                        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
                         android:textColor="@color/black"
                         android:textSize="16sp"
-                        app:layout_constraintStart_toEndOf="@id/iv_logout"
-                        android:layout_marginStart="12dp"
-                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"/>
+                        app:layout_constraintStart_toEndOf="@id/iv_logout"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
                         android:id="@+id/iv_log_arrow"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginEnd="16dp"
+                        android:src="@drawable/arrow_right"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:src="@drawable/arrow_right"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
-
-            <View
-                android:layout_width="320dp"
-                android:layout_height="1dp"
-                android:background="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cv_logout" />
-
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -512,12 +522,39 @@
         android:id="@+id/ci_profile"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/user_avatar"
-        app:layout_constraintTop_toBottomOf="@id/iv_logo"
-        android:elevation="6dp"
-        android:src="@drawable/gladys"
-        android:scaleType="centerCrop"/>
+        android:elevation="4dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="54dp"
+        android:src="@drawable/photo_profie"
+        app:layout_constraintBottom_toTopOf="@id/container_profile"
+        app:layout_constraintEnd_toEndOf="@id/container_profile"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintStart_toStartOf="@id/container_profile"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/btn_gallery"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_button"
+            android:contentDescription="Gallery"
+            app:layout_constraintEnd_toStartOf="@id/ci_profile"
+            app:layout_constraintBottom_toBottomOf="@id/ci_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_gallery" />
+
+        <ImageView
+            android:id="@+id/btn_capture_camera"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/round_button"
+            android:elevation="6dp"
+            app:layout_constraintStart_toStartOf="@id/ci_profile"
+            app:layout_constraintEnd_toEndOf="@id/ci_profile"
+            app:layout_constraintBottom_toBottomOf="@id/ci_profile"
+            app:srcCompat="@drawable/ic_capture_gray" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

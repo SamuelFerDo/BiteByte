@@ -9,11 +9,12 @@ import com.example.bitebyte.R
 import com.example.bitebyte.data.model.ApiResult
 import com.example.bitebyte.data.model.UserBody
 import com.example.bitebyte.data.remote.ApiConfig
+import com.example.bitebyte.ui.auth.LoginViewModel
 import com.example.bitebyte.utils.SessionManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class GenerateViewModel(application: Application, val sessionManager: SessionManager, age:String, weight:String, height:String, gender:String, healthConcern: String, menuType: String) : AndroidViewModel(application) {
+class GenerateViewModel(application: Application,val sessionManager: SessionManager, age:String, weight:String, height:String, gender:String, healthConcern: String, menuType: String, activity: String) : AndroidViewModel(application) {
     companion object{
         const val TAG = "GenerateViewModel"
     }
@@ -24,6 +25,7 @@ class GenerateViewModel(application: Application, val sessionManager: SessionMan
     val weight = weight
     val height = height
     val gender = gender
+    val activity = activity
 
     private val apiService = ApiConfig.getApiService()
 
@@ -32,12 +34,13 @@ class GenerateViewModel(application: Application, val sessionManager: SessionMan
 
     fun postUserData() {
         val userBody = UserBody(
-            age = age,
-            weight = weight,
-            height = height,
-            gender = gender,
-            disease = healthConcern,
-            food_type = menuType
+            age = age.toInt(),
+            weight = weight.toInt(),
+            height = height.toInt(),
+            gender = gender.toInt(),
+            health_concern = healthConcern.toInt(),
+            menu_type = menuType.toInt(),
+            activity_type = activity.toInt()
         )
         viewModelScope.launch(Dispatchers.IO) {
             val response = apiService.addUserInformation(sessionManager.getToken()!!,userBody)
@@ -46,6 +49,14 @@ class GenerateViewModel(application: Application, val sessionManager: SessionMan
                 val responseBody = response.body()
                 Log.d(TAG, "Success: ${responseBody}")
                 _userData.postValue(ApiResult.Success)
+                sessionManager.addUserInput(
+                    age,
+                    gender,
+                    height,
+                    weight,
+                    healthConcern,
+                    menuType,
+                    activity)
             } else {
                 Log.e(TAG, "Error: ${response.message()}")
                 _userData.postValue(

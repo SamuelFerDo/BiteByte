@@ -32,6 +32,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.questionTwoFragment -> binding.bottomNavigationView.visibility = View.GONE
                 R.id.questionThreeFragment -> binding.bottomNavigationView.visibility = View.GONE
                 R.id.generateFragment -> binding.bottomNavigationView.visibility = View.GONE
+                R.id.questionFourFragment -> binding.bottomNavigationView.visibility = View.GONE
+                R.id.detailRecipeFragment -> binding.bottomNavigationView.visibility = View.GONE
+                R.id.premiumFragment -> binding.bottomNavigationView.visibility = View.GONE
+                R.id.editAccountFragment -> binding.bottomNavigationView.visibility = View.GONE
+                R.id.shoppingListFragment -> binding.bottomNavigationView.visibility = View.GONE
                 else -> binding.bottomNavigationView.visibility = View.VISIBLE
             }
         }
@@ -41,7 +46,6 @@ class MainActivity : AppCompatActivity() {
         if(sessionManager.getToken() != null){
             fragmentManager.navController.popBackStack()
             if(sessionManager.getFillInput() != null){
-                //jangan lupa delete preference
                 fragmentManager.navController.navigate(R.id.homeFragment)
             }else{
                 fragmentManager.navController.navigate(R.id.questionStartFragment)

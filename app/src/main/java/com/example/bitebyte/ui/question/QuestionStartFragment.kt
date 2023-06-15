@@ -2,6 +2,7 @@ package com.example.bitebyte.ui.question
 
 import android.os.Bundle
 import android.transition.TransitionInflater
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -37,12 +38,10 @@ class QuestionStartFragment : Fragment() {
 
         sessionManager = SessionManager(requireContext())
 
+        Log.d("HomeFragment", "onViewCreated: ${sessionManager.getAge()}")
+
         binding.btnStart.setOnClickListener{
             findNavController().navigate(QuestionStartFragmentDirections.actionQuestionStartFragmentToQuestionOneFragment())
-            //sessionManager.clearSession()
-            //findNavController().navigate(QuestionStartFragmentDirections.actionQuestionStartFragmentToLoginFragment())
-            //Snackbar.make(binding.root, getString(R.string.logged_out), Snackbar.LENGTH_SHORT).show()
-            //sessionManager.resetFillInput()
         }
     }
 }

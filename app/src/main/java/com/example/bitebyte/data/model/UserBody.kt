@@ -1,10 +1,11 @@
 package com.example.bitebyte.data.model
 
 data class UserBody (
-    val age: String,
-    val weight: String,
-    val height: String,
-    val gender: String,
-    val disease: String,
-    val food_type : String
+    val age: Int,
+    val weight: Int,
+    val height: Int,
+    val gender: Int,
+    val health_concern: Int,
+    val menu_type : Int,
+    val activity_type: Int,
 )

@@ -1,43 +1,64 @@
 package com.example.bitebyte.ui.bottomnav.ui.recommendation
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider
-import com.example.bitebyte.R
-import com.example.bitebyte.databinding.FragmentHomeBinding
+import androidx.navigation.fragment.findNavController
+import com.example.bitebyte.adapter.VerticalRecipeAdapter
 import com.example.bitebyte.databinding.FragmentRecommendationBinding
-import com.example.bitebyte.ui.bottomnav.ui.home.HomeViewModel
+import com.example.bitebyte.utils.SessionManager
+import com.example.bitebyte.utils.viewModelsFactory
 
 class RecommendationFragment : Fragment() {
 
     private var _binding: FragmentRecommendationBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    private val viewModel: RecommendationViewModel by viewModelsFactory {
+        val sessionManager = SessionManager(requireContext())
+        RecommendationViewModel(sessionManager)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(RecommendationViewModel::class.java)
-
         _binding = FragmentRecommendationBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textRecommendation
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.fade)
+        return binding.root
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        val adapter = VerticalRecipeAdapter(
+            VerticalRecipeAdapter.OnClickRecipeListener { recipe, binding ->
+                findNavController().navigate(RecommendationFragmentDirections.actionRecommendationFragmentToDetailRecipeFragment(recipe))
+            })
+
+        viewModel.recipes.observe(viewLifecycleOwner){
+            if (it != null) {
+                adapter.bindRecipe(it.result
+                )
+            }
+            binding.rvForyouRecipe.apply {
+                setHasFixedSize(true)
+                this.adapter = adapter
+            }
+        }
+
+        viewModel.loading.observe(viewLifecycleOwner){
+            if(it){
+                binding.progressBar.visibility = View.VISIBLE
+            }else{
+                binding.progressBar.visibility = View.GONE
+            }
+        }
+
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
